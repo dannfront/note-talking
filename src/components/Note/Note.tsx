@@ -68,8 +68,9 @@ export default function Note({ id, title = "", content = "", tags = [], lastEdit
             title: data.title,
             content: data.content,
             lastEdited: new Date(),
-            tags: data.tags.split(",").map((tag: string) => tag.trim())
+            tags: data.tags.split(",").map((tag: string) => tag.trim()).filter((tag: string) => tag !== ""),
         }
+
 
 
         const noteUpdate = await queryUpdateNote.mutateAsync(note)
