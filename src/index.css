@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+    --color-custom-neutral-950: #0E121B;
+    --color-custom-neutral-900: #191B25;
+    --color-custom-neutral-800: #232530;
+    --color-custom-neutral-700: #2B303B;
+    --color-custom-neutral-600: #525866;
+    --color-custom-neutral-500: #717784;
+    --color-custom-neutral-400: #99A0AE;
+    --color-custom-neutral-300: #CACFD8;
+    --color-custom-neutral-200: #E0E4EA;
+    --color-custom-neutral-100: #F3F5F8;
+    --color-custom-neutral-50: #F5F7FA;
+    --color-custom-neutral-1: #FFFFFF;
+
+    --color-custom-blue-700: #2547D0;
+    --color-custom-blue-500: #335CFF;
+    --color-custom-blue-50: #EBF1FF;
+
+    --color-custom-green-500: #21C168;
+    --color-custom-green-100: #D1FBE9;
+
+    --color-custom-red-500: #FB3168;
+    --color-custom-red-100: #FFDDE7;
+
+    --radius-custom-4: 4px;
+    --radius-custom-6: 6px;
+    --radius-custom-8: 8px;
+    --radius-custom-10: 10px;
+    --radius-custom-12: 12px;
+    --radius-custom-16: 16px;
+    --radius-custom-20: 20px;
+    --radius-custom-24: 24px;
+    --radius-custom-full: 9999px;
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+body {
+    font-family: "Space Mono", monospace;
+
+}
+
+
+
+.loader {
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    border: 10px solid;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    border-color: rgba(51, 92, 255, 0.25) rgba(51, 92, 255, 0.45) rgba(51, 92, 255, 0.65) rgba(51, 92, 255, 1);
+}
+
+.dark .loader {
+    border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.5);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.nav-desktop.active {
+    background-color: var(--color-custom-neutral-100);
+    border-radius: var(--radius-custom-4);
+
+}
+
+
+.dark .nav-desktop.active {
+    background-color: var(--color-custom-neutral-700);
+
+}
+
+.tag.active {
+    background-color: var(--color-custom-neutral-100);
+    border-radius: var(--radius-custom-4);
+
+}
+
+.dark .tag.active {
+    background-color: var(--color-custom-neutral-700);
+
+}
+
+
+.list-link .active {
+    background-color: var(--color-custom-blue-50);
+    border-radius: var(--radius-custom-4);
+
+}
+
+.dark .list-link .active {
+    background-color: var(--color-custom-neutral-700);
+    /* border-radius: var(--radius-custom-4); */
+}
+
+.active svg {
+    color: var(--color-custom-blue-500);
+}
+
+.list-link :hover {
+    background-color: var(--color-custom-blue-50);
+    border-radius: var(--radius-custom-4);
+}
+
+.list-link :hover svg {
+    color: var(--color-custom-blue-500);
+}
+
+
+.note-active.active article {
+    background-color: var(--color-custom-neutral-100);
+    /* background-color: blueviolet; */
+    border-radius: var(--radius-custom-6);
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.dark .note-active.active article {
+    background-color: var(--color-custom-neutral-800);
+}
