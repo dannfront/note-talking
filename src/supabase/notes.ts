@@ -218,7 +218,6 @@ export async function getNotes(isArchived: boolean = false) {
             .eq("isArchived", isArchived)
 
         if (error) throw error
-        console.log(data, user);
 
         return data
 

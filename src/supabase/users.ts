@@ -13,7 +13,6 @@ export async function signIn(email: string, password: string) {
 
         if (error) throw error;
         if (!user) throw new Error("User not found");
-        console.log(user);
 
         return user;
     } catch (error) {
