@@ -24,9 +24,6 @@ export default function RestoreAndDelete({ id, isArchive }: Props) {
     const queryRestore = useRestoreNote(Number(id))
 
 
-    console.log(isArchive);
-
-
     const navigate = useNavigate()
 
 
@@ -115,7 +112,7 @@ export default function RestoreAndDelete({ id, isArchive }: Props) {
                 isOpen={openArchive}
                 setIsOpen={setOpenArchive}
                 disabled={queryArchive.isPending}
-                Icon={<IconArchive className="text-white" />}
+                Icon={<IconArchive className="text-custom-neutral-950 dark:text-white" />}
             />
 
             <Modal
@@ -127,7 +124,7 @@ export default function RestoreAndDelete({ id, isArchive }: Props) {
                 isOpen={openDelete}
                 setIsOpen={setOpenDelete}
                 disabled={queryDelete.isPending}
-                Icon={<IconDelete className="text-white" />}
+                Icon={<IconDelete className="text-custom-neutral-950 dark:text-white" />}
             />
 
         </section >

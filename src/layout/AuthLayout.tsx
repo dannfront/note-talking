@@ -12,7 +12,6 @@ interface Props {
 export default function AuthLayout({ children }: Props) {
 
     const [route] = useLocation().pathname.split("/").slice(1);
-    console.log(route);
 
 
     return (

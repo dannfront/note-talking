@@ -11,9 +11,6 @@ export default function Tags() {
     const params = useParams()
     const path = useLocation()
     const notesQuery = useGetAllNotes()
-    if (notesQuery.isLoading) {
-        return <div className='hidden lg:dark:bg-custom-neutral-950 lg:block lg:row-span-4 lg:border-r lg:px-[16px] lg:border-r-custom-neutral-800 lg:h-full'></div>
-    }
     const notes = notesQuery.data as Inote[] | undefined
 
 
@@ -29,7 +26,7 @@ export default function Tags() {
         <>
             <RenderNotesDesktop notes={notesTag!} path={`/tag/${tag}/`} isLoading={notesQuery.isLoading} />
 
-            <Note key={note?.id} title={note?.title} content={note?.content} tags={note?.Tags.tags} lastEdited={note?.lastEdited} />
+            <Note key={note?.id} id={note?.id} title={note?.title} content={note?.content} tags={note?.Tags.tags} lastEdited={note?.lastEdited} />
 
             <RestoreAndDelete id={note?.id} isArchive={note!.isArchived!} />
         </>

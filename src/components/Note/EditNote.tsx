@@ -114,7 +114,7 @@ export default function EditNote({ disabled = false }: { disabled?: boolean }) {
                 onHandler={deleteNote}
                 isOpen={openDelete}
                 setIsOpen={setOpenDelete}
-                Icon={<IconDelete className="text-white" />}
+                Icon={<IconDelete className="text-custom-neutral-950 dark:text-white" />}
             />
 
 
@@ -126,7 +126,7 @@ export default function EditNote({ disabled = false }: { disabled?: boolean }) {
                 onHandler={archiveNote}
                 isOpen={openArchive}
                 setIsOpen={setOpenArchive}
-                Icon={<IconArchive className="text-white" />}
+                Icon={<IconArchive className="text-custom-neutral-950 dark:text-white" />}
             />
         </>
     )

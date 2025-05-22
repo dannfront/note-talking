@@ -22,7 +22,8 @@ interface Props {
 
 
 export default function Note({ id, title = "", content = "", tags = [], lastEdited = "Not yet saved", isNewNote = false }: Props) {
-    console.log(id);
+
+
 
     const queryNote = useCreateNote()
     const queryUpdateNote = useUpdateNote()
@@ -47,7 +48,7 @@ export default function Note({ id, title = "", content = "", tags = [], lastEdit
             const newNote = {
                 title: data.title,
                 content: data.content,
-                tags: data.tags.split(",").map((tag: string) => tag.trim()),
+                tags: data.tags.split(",").map((tag: string) => tag.trim()).filter((tag: string) => tag !== ""),
                 isArchived: false,
                 lastEdited: new Date()
             }
@@ -76,7 +77,6 @@ export default function Note({ id, title = "", content = "", tags = [], lastEdit
         const noteUpdate = await queryUpdateNote.mutateAsync(note)
 
         if (!noteUpdate) {
-            console.log(note);
 
             return console.log("Error updating note")
         }
