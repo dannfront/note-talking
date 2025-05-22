@@ -29,16 +29,17 @@ export default function Form({ isRegister }: Props) {
 
 
     async function onSubmit(data: any) {
-        reset()
         if (isRegister) {
+
             const { email, password } = data;
-            const register = await querySignUp.mutateAsync(email, password)
+            const register = await querySignUp.mutateAsync({ email, password })
 
             if (register === null) {
                 return toast.error("Error creating account")
             }
 
             invalidateQuerys()
+            reset()
 
             return await navigate("/notes", { viewTransition: true })
         }
