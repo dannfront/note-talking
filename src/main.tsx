@@ -22,6 +22,6 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <App />
       <ReactQueryDevtools initialIsOpen={false} />
-    </StrictMode>,
+    </StrictMode>
   </QueryClientProvider>
 )
