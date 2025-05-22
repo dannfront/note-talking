@@ -1,6 +1,5 @@
 import { useParams } from "react-router"
 import Main from "../shared/Main"
-import { notes } from "../../data/data.json"
 import CardNote from "../CardNote"
 import ButtonBack from "../ButtonBack"
 import useGetAllNotes from "../../hooks/Notes/useGetAllNotes"
