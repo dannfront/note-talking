@@ -1,5 +1,5 @@
 
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import Nav from "../components/shared/Nav";
 
 import { Outlet, useNavigate } from "react-router";
